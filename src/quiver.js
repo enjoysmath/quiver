@@ -180,6 +180,8 @@ class Quiver {
                 return QuiverExport.tikz_cd.export(this, settings);
             case "base64":
                 return QuiverImportExport.base64.export(this, settings);
+            case "database":
+                return QuiverImportExport.database.export(this, settings);
             default:
                 throw new Error(`unknown export format \`${format}\``);
         }
