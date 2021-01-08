@@ -57,14 +57,36 @@ debug.launch-configs = (2,
 debug.named-entry-points = (1,
                             {})
 proj.debug-sub-processes = True
-proj.directory-list = [{'dirloc': loc('.'),
+proj.directory-list = [{'dirloc': loc('templates'),
                         'excludes': (),
                         'filter': u'*',
                         'include_hidden': False,
                         'recursive': True,
+                        'watch_for_changes': True},
+                       {'dirloc': loc('static'),
+                        'excludes': (),
+                        'filter': '*',
+                        'include_hidden': True,
+                        'recursive': True,
                         'watch_for_changes': True}]
+proj.file-list = [loc('app.py'),
+                  loc('flask_login_test.py'),
+                  loc('flask_mongodb_example.py'),
+                  loc('global_settings.py'),
+                  loc('graph_db_credentials.py'),
+                  loc('login_manager.py'),
+                  loc('main.py'),
+                  loc('queries.py'),
+                  loc('registration_form.py'),
+                  loc('requirements.txt'),
+                  loc('validators.py'),
+                  loc('../../__init__.py')]
 proj.file-type = 'shared'
-proj.launch-config = {loc('database_service.py'): ('project',
+proj.launch-config = {loc('../../Taxes/DatabaseService/flask_app.py'): ('pro'\
+        'ject',
+        (u'flask run',
+         '')),
+                      loc('database_service.py'): ('project',
         (u'',
          'launch-coAJMzBpndIgR7IW')),
                       loc('flask_app.py'): ('project',
@@ -72,9 +94,5 @@ proj.launch-config = {loc('database_service.py'): ('project',
          'launch-coAJMzBpndIgR7IW')),
                       loc('my_flask_app.py'): ('project',
         (u'',
-         'launch-coAJMzBpndIgR7IW')),
-                      loc('../../Taxes/DatabaseService/flask_app.py'): ('pro'\
-        'ject',
-        (u'flask run',
-         ''))}
-proj.main-file = loc('database_service.py')
+         'launch-coAJMzBpndIgR7IW'))}
+proj.main-file = loc('app.py')

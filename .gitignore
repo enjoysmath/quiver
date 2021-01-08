@@ -1,3 +1,4 @@
 src/KaTeX/*
 node_modules
 
+/database_service/__pycache__
