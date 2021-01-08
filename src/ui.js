@@ -4156,6 +4156,8 @@ class Panel {
             () => display_export_pane("tikz-cd"),
         );
 
+        
+
         this.global = new DOM.Element("div", { class: "panel global" }).add(
             // The shareable link button.
             new DOM.Element("button").add("Get shareable link")
