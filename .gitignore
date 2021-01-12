@@ -2,3 +2,7 @@ src/KaTeX/*
 node_modules
 
 /database_service/__pycache__
+/database_service/QuiverDatabase/__pycache__/*.pyc
+/database_service/Main/migrations/__pycache__/*.pyc
+*.pyc
+/database_service/*.wpu
