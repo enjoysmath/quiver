@@ -149,7 +149,6 @@ def neo4j_url():
     url += os.environ.get('NEO4J_PASSWORD', 'neo4j') + "@"
     url += os.environ.get('NEO4J_HOST', 'localhost') + ":"
     url += os.environ.get('NEO4J_PORT', '7687')
-    print(url)
     return url
 
 NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
