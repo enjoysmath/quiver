@@ -26,6 +26,7 @@ SECRET_KEY = 'vn39@v42g!hd+ehkiv*i-@9q!slgyr$xxqj1c5y1f23d&4a36l'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'quiver-database.herokuapp.com'
 ]
 
