@@ -139,6 +139,7 @@ def neo4j_url():
 
 try:     
     NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
+    print(NEOMODEL_NEO4J_BOLT_URL)
 except:
     pass    # For creating new apps with manage.py
 
