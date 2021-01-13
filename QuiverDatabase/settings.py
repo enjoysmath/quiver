@@ -11,6 +11,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,10 +139,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-import os
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+import logging
 
 def neo4j_url():
     url = os.environ['NEO4J_SCHEMA'] + "://"
@@ -139,10 +154,8 @@ def neo4j_url():
 
 try:     
     NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
-    with open('debug_output.txt', 'w') as file:
-        file.write(NEOMODEL_NEO4J_BOLT_URL)
 except:
-    pass    # For creating new apps with manage.py
+    pass # For creating new apps with manage.py
 
 NEOMODEL_SIGNALS = True
 NEOMODEL_FORCE_TIMEZONE = False
@@ -153,3 +166,6 @@ config.MAX_POOL_SIZE = 50  # TODO: what does this affect?
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+#################################################################
+
