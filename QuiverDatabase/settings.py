@@ -155,6 +155,7 @@ def neo4j_url():
 try:     
     NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
 except:
+    NEOMODEL_NEO4J_BOLT_URL = "DEBUG ME"
     pass # For creating new apps with manage.py
 
 NEOMODEL_SIGNALS = True
