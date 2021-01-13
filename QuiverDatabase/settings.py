@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 LOGGING = {
     'version': 1,
@@ -155,8 +156,8 @@ def neo4j_url():
 try:     
     NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
 except:
-    NEOMODEL_NEO4J_BOLT_URL = "DEBUG ME"
-    pass # For creating new apps with manage.py
+    NEOMODEL_NEO4J_BOLT_URL = "bolt://neo4j:neo4j@localhost:7687"
+    # Essentially pass, for creating new apps with manage.py
 
 NEOMODEL_SIGNALS = True
 NEOMODEL_FORCE_TIMEZONE = False
@@ -170,3 +171,5 @@ LOGOUT_REDIRECT_URL = 'home'
 
 #################################################################
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())
