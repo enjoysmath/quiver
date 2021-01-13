@@ -139,7 +139,8 @@ def neo4j_url():
 
 try:     
     NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
-    print(NEOMODEL_NEO4J_BOLT_URL)
+    with open('debug_output.txt', 'w') as file:
+        file.write(NEOMODEL_NEO4J_BOLT_URL)
 except:
     pass    # For creating new apps with manage.py
 
