@@ -8,9 +8,6 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'QuiverDatabase.settings')
     
-    from django.conf import settings
-    print(settings.NEOMODEL_NEO4J_BOLT_URL)
-    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -143,21 +143,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-import logging
-
 def neo4j_url():
-    url = os.environ['NEO4J_SCHEMA'] + "://"
-    url += os.environ['NEO4J_USERNAME'] + ":"
-    url += os.environ['NEO4J_PASSWORD'] + "@"
-    url += os.environ['NEO4J_HOST'] + ":"
-    url += os.environ['NEO4J_PORT']
+    url = os.environ.get('NEO4J_SCHEMA', 'bolt') + "://"
+    url += os.environ.get('NEO4J_USERNAME', 'neo4j') + ":"
+    url += os.environ.get('NEO4J_PASSWORD', 'neo4j') + "@"
+    url += os.environ.get('NEO4J_HOST', 'localhost') + ":"
+    url += os.environ.get('NEO4J_PORT', '7687')
+    print(url)
     return url
 
-try:     
-    NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
-except:
-    NEOMODEL_NEO4J_BOLT_URL = "bolt://neo4j:neo4j@localhost:7687"
-    # Essentially pass, for creating new apps with manage.py
+NEOMODEL_NEO4J_BOLT_URL = neo4j_url()
 
 NEOMODEL_SIGNALS = True
 NEOMODEL_FORCE_TIMEZONE = False
