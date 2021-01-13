@@ -25,7 +25,9 @@ SECRET_KEY = 'vn39@v42g!hd+ehkiv*i-@9q!slgyr$xxqj1c5y1f23d&4a36l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'quiver-database.herokuapp.com'
+]
 
 
 # Application definition
