@@ -8,3 +8,4 @@ node_modules
 /database_service/*.wpu
 /database_service/QuiverDatabase.wpr
 *.wpu
+db.sqlite3
